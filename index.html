@@ -8,6 +8,10 @@
     <meta name="keywords" content="uniformes Criciúma, uniforme profissional Criciúma, uniforme construção civil Criciúma, uniforme escolar Criciúma, bordado em uniforme Criciúma, DTF Criciúma, uniforme indústria Criciúma, fardamento Criciúma, camiseta personalizada Criciúma, uniforme SATC, uniforme SESI Criciúma, uniforme IFSC Criciúma, uniformes para empresas centro Criciúma">
     <link rel="canonical" href="https://dudaline.com/">
 
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="image" type="image/webp" href="assets/img/webp/hero-home-mobile.webp" media="(max-width: 768px)">
+    <link rel="preload" as="image" type="image/webp" href="assets/img/webp/hero-home.webp" media="(min-width: 769px)">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dudaline.com/">
@@ -323,7 +327,10 @@
                 <!-- Logo VIP Line -->
                 <a href="#vipline" title="Ir para VIP Line" class="group relative flex items-center justify-center transition-all duration-300 hover:scale-110">
                     <div class="absolute inset-0 bg-brandPurple/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <img src="assets/img/logo-sf-2.png" alt="Logo VIP Line Camisetas" class="h-10 md:h-12 lg:h-14 w-auto object-contain relative z-10 drop-shadow-sm transition-transform duration-300" style="mix-blend-mode: multiply;">
+                    <picture>
+                        <source srcset="assets/img/webp/logo-sf-2.webp" type="image/webp">
+                        <img src="assets/img/logo-sf-2.png" alt="Logo VIP Line Camisetas" class="h-10 md:h-12 lg:h-14 w-auto object-contain relative z-10 drop-shadow-sm transition-transform duration-300" style="mix-blend-mode: multiply;" width="200" height="200" decoding="async">
+                    </picture>
                 </a>
 
                 <!-- Divisor Elegante -->
@@ -332,7 +339,10 @@
                 <!-- Logo Dudalu -->
                 <a href="#dudalu" title="Ir para Dudalu" class="group relative flex items-center justify-center transition-all duration-300 hover:scale-110">
                     <div class="absolute inset-0 bg-brandRed/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <img src="assets/img/logo-sf-1.png" alt="Logo Dudalu Uniformes Escolares" class="h-10 md:h-12 lg:h-14 w-auto object-contain relative z-10 drop-shadow-sm transition-transform duration-300" style="mix-blend-mode: multiply;">
+                    <picture>
+                        <source srcset="assets/img/webp/logo-sf-1.webp" type="image/webp">
+                        <img src="assets/img/logo-sf-1.png" alt="Logo Dudalu Uniformes Escolares" class="h-10 md:h-12 lg:h-14 w-auto object-contain relative z-10 drop-shadow-sm transition-transform duration-300" style="mix-blend-mode: multiply;" width="200" height="200" decoding="async">
+                    </picture>
                 </a>
             </div>
 
@@ -381,7 +391,11 @@
     <!-- 1. BANNER VISUAL (#topo) -->
     <section id="topo" class="w-full pt-[60px] md:pt-[72px] bg-brandBg">
         <div class="w-full mx-auto relative">
-            <img src="assets/img/hero-home.png" alt="Loja VIP Line e Dudalu Uniformes - uniformes profissionais e escolares em Criciúma" class="w-full h-auto max-h-[85vh] object-cover object-top">
+            <picture>
+                <source media="(max-width: 768px)" srcset="assets/img/webp/hero-home-mobile.webp" type="image/webp">
+                <source srcset="assets/img/webp/hero-home.webp" type="image/webp">
+                <img src="assets/img/hero-home.png" alt="Loja VIP Line e Dudalu Uniformes - uniformes profissionais e escolares em Criciúma" class="w-full h-auto max-h-[85vh] object-cover object-top" width="1717" height="916" fetchpriority="high" loading="eager" decoding="async">
+            </picture>
         </div>
     </section>
 
@@ -435,7 +449,10 @@
                 <!-- Card VIP Line -->
                 <div class="group bg-brandBg border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 lux-transition">
                     <div class="h-48 bg-brandPurpleLight overflow-hidden relative">
-                        <img src="assets/img/conteiner-vip.png" alt="Uniformes Profissionais VIP Line" class="w-full h-full object-cover opacity-90 group-hover:scale-105 lux-transition">
+                        <picture>
+                            <source srcset="assets/img/webp/conteiner-vip.webp" type="image/webp">
+                            <img src="assets/img/conteiner-vip.png" alt="Uniformes Profissionais VIP Line" class="w-full h-full object-cover opacity-90 group-hover:scale-105 lux-transition" width="800" height="547" loading="lazy" decoding="async">
+                        </picture>
                         <div class="absolute top-4 left-4 bg-brandPurple text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-sm">Linha profissional</div>
                     </div>
                     <div class="p-8 lg:p-10">
@@ -454,7 +471,10 @@
                 <!-- Card Dudalu -->
                 <div class="group bg-brandBg border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 lux-transition">
                     <div class="h-48 bg-brandRedLight overflow-hidden relative">
-                        <img src="assets/img/conteiner-duda.png" alt="Uniformes Escolares Dudalu" class="w-full h-full object-cover opacity-90 group-hover:scale-105 lux-transition">
+                        <picture>
+                            <source srcset="assets/img/webp/conteiner-duda.webp" type="image/webp">
+                            <img src="assets/img/conteiner-duda.png" alt="Uniformes Escolares Dudalu" class="w-full h-full object-cover opacity-90 group-hover:scale-105 lux-transition" width="800" height="547" loading="lazy" decoding="async">
+                        </picture>
                         <div class="absolute top-4 left-4 bg-brandRed text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-sm">Linha escolar</div>
                     </div>
                     <div class="p-8 lg:p-10">
@@ -524,7 +544,10 @@
 
                 <!-- Lista Produtos VIP Line -->
                 <div class="relative">
-                    <img src="assets/img/produtos-vip.jpg" alt="Uniformes corporativos personalizados VIP Line Criciúma" class="rounded-2xl shadow-xl w-full object-cover h-[420px] lg:h-[560px] mb-8" style="object-position: center 22%;">
+                    <picture>
+                        <source srcset="assets/img/webp/produtos-vip.webp" type="image/webp">
+                        <img src="assets/img/produtos-vip.jpg" alt="Uniformes corporativos personalizados VIP Line Criciúma" class="rounded-2xl shadow-xl w-full object-cover h-[420px] lg:h-[560px] mb-8" style="object-position: center 22%;" width="960" height="1200" loading="lazy" decoding="async">
+                    </picture>
                     
                     <div class="bg-white rounded-2xl shadow-lg p-8 relative -mt-16 mx-4 lg:mx-8">
                         <h3 class="text-xl font-bold text-brandText mb-4">Linha de produtos VIP Line</h3>
@@ -549,7 +572,10 @@
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center lg:flex-row-reverse flex-col-reverse">
                 
                 <div class="relative w-full order-2 lg:order-1">
-                    <img src="assets/img/produtos-duda.jpg" alt="Uniformes escolares Dudalu para escolas de Criciúma" class="rounded-2xl shadow-xl w-full object-cover h-[400px] mb-8" style="object-position: center 60%;">
+                    <picture>
+                        <source srcset="assets/img/webp/produtos-duda.webp" type="image/webp">
+                        <img src="assets/img/produtos-duda.jpg" alt="Uniformes escolares Dudalu para escolas de Criciúma" class="rounded-2xl shadow-xl w-full object-cover h-[400px] mb-8" style="object-position: center 60%;" width="960" height="1280" loading="lazy" decoding="async">
+                    </picture>
                     
                     <div class="bg-white rounded-2xl shadow-lg p-8 relative -mt-16 mx-4 lg:mx-8 border border-gray-100">
                         <h3 class="text-xl font-bold text-brandText mb-4">Linha de produtos Dudalu</h3>
@@ -639,7 +665,10 @@
             <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <!-- Bordado -->
                 <div class="group relative rounded-2xl overflow-hidden lux-transition hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40 cursor-default" style="border:1px solid rgba(255,255,255,0.08);">
-                    <img src="assets/img/1.png" alt="Bordado computadorizado em uniforme corporativo em Criciúma" class="w-full group-hover:scale-105 lux-transition" style="display:block;aspect-ratio:3/4;object-fit:cover;object-position:center center;">
+                    <picture>
+                        <source srcset="assets/img/webp/1.webp" type="image/webp">
+                        <img src="assets/img/1.png" alt="Bordado computadorizado em uniforme corporativo em Criciúma" class="w-full group-hover:scale-105 lux-transition" style="display:block;aspect-ratio:3/4;object-fit:cover;object-position:center center;" width="640" height="960" loading="lazy" decoding="async">
+                    </picture>
                     <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.45) 35%,transparent 65%);"></div>
                     <div class="absolute bottom-0 left-0 right-0" style="padding:1.75rem;">
                         <h3 style="font-size:1.2rem;font-weight:700;color:#ffffff;margin-bottom:0.5rem;">Bordado computadorizado</h3>
@@ -649,7 +678,10 @@
 
                 <!-- Estampa -->
                 <div class="group relative rounded-2xl overflow-hidden lux-transition hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40 cursor-default" style="border:1px solid rgba(255,255,255,0.08);">
-                    <img src="assets/img/2.png" alt="Estampa em tecido para personalização de uniformes VIP Line" class="w-full group-hover:scale-105 lux-transition" style="display:block;aspect-ratio:3/4;object-fit:cover;object-position:center center;">
+                    <picture>
+                        <source srcset="assets/img/webp/2.webp" type="image/webp">
+                        <img src="assets/img/2.png" alt="Estampa em tecido para personalização de uniformes VIP Line" class="w-full group-hover:scale-105 lux-transition" style="display:block;aspect-ratio:3/4;object-fit:cover;object-position:center center;" width="640" height="960" loading="lazy" decoding="async">
+                    </picture>
                     <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.45) 35%,transparent 65%);"></div>
                     <div class="absolute bottom-0 left-0 right-0" style="padding:1.75rem;">
                         <h3 style="font-size:1.2rem;font-weight:700;color:#ffffff;margin-bottom:0.5rem;">Estampa em tecido</h3>
@@ -659,7 +691,10 @@
 
                 <!-- DTF -->
                 <div class="group relative rounded-2xl overflow-hidden lux-transition hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40 cursor-default" style="border:1px solid rgba(255,255,255,0.08);">
-                    <img src="assets/img/3.png" alt="DTF Direct to Film para uniformes personalizados em Criciúma" class="w-full group-hover:scale-105 lux-transition" style="display:block;aspect-ratio:3/4;object-fit:cover;object-position:center center;">
+                    <picture>
+                        <source srcset="assets/img/webp/3.webp" type="image/webp">
+                        <img src="assets/img/3.png" alt="DTF Direct to Film para uniformes personalizados em Criciúma" class="w-full group-hover:scale-105 lux-transition" style="display:block;aspect-ratio:3/4;object-fit:cover;object-position:center center;" width="640" height="960" loading="lazy" decoding="async">
+                    </picture>
                     <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.45) 35%,transparent 65%);"></div>
                     <div class="absolute bottom-0 left-0 right-0" style="padding:1.75rem;">
                         <h3 style="font-size:1.2rem;font-weight:700;color:#ffffff;margin-bottom:0.5rem;">DTF (Direct to Film)</h3>
@@ -802,7 +837,10 @@
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <img src="assets/img/bianca-goncalves.png" alt="Bianca Gonçalves" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
+                            <picture>
+                                <source srcset="assets/img/webp/bianca-goncalves.webp" type="image/webp">
+                                <img src="assets/img/bianca-goncalves.png" alt="Bianca Gonçalves" class="w-11 h-11 rounded-full object-cover flex-shrink-0" width="88" height="88" loading="lazy" decoding="async">
+                            </picture>
                             <div>
                                 <p class="font-semibold text-brandText text-sm leading-tight">Bianca Gonçalves</p>
                                 <p class="text-xs text-gray-400 mt-0.5">há 1 semana</p>
@@ -818,7 +856,10 @@
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <img src="assets/img/leticia-donnatello.png" alt="Letícia Donnatello" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
+                            <picture>
+                                <source srcset="assets/img/webp/leticia-donnatello.webp" type="image/webp">
+                                <img src="assets/img/leticia-donnatello.png" alt="Letícia Donnatello" class="w-11 h-11 rounded-full object-cover flex-shrink-0" width="88" height="88" loading="lazy" decoding="async">
+                            </picture>
                             <div>
                                 <p class="font-semibold text-brandText text-sm leading-tight">Letícia Donnatello</p>
                                 <p class="text-xs text-gray-400 mt-0.5">há 2 semanas</p>
@@ -834,7 +875,10 @@
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <img src="assets/img/pedro-jorge-rosario.png" alt="Pedro Jorge Rosario" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
+                            <picture>
+                                <source srcset="assets/img/webp/pedro-jorge-rosario.webp" type="image/webp">
+                                <img src="assets/img/pedro-jorge-rosario.png" alt="Pedro Jorge Rosario" class="w-11 h-11 rounded-full object-cover flex-shrink-0" width="88" height="88" loading="lazy" decoding="async">
+                            </picture>
                             <div>
                                 <p class="font-semibold text-brandText text-sm leading-tight">Pedro Jorge Rosario</p>
                                 <p class="text-xs text-gray-400 mt-0.5">há 3 semanas</p>
@@ -850,7 +894,10 @@
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <img src="assets/img/rebeca-bitencourt.png" alt="Rebeca Bitencourt" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
+                            <picture>
+                                <source srcset="assets/img/webp/rebeca-bitencourt.webp" type="image/webp">
+                                <img src="assets/img/rebeca-bitencourt.png" alt="Rebeca Bitencourt" class="w-11 h-11 rounded-full object-cover flex-shrink-0" width="88" height="88" loading="lazy" decoding="async">
+                            </picture>
                             <div>
                                 <p class="font-semibold text-brandText text-sm leading-tight">Rebeca Bitencourt</p>
                                 <p class="text-xs text-gray-400 mt-0.5">há 1 mês</p>
@@ -866,7 +913,10 @@
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <img src="assets/img/rodrigo-sales.png" alt="Rodrigo Sales" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
+                            <picture>
+                                <source srcset="assets/img/webp/rodrigo-sales.webp" type="image/webp">
+                                <img src="assets/img/rodrigo-sales.png" alt="Rodrigo Sales" class="w-11 h-11 rounded-full object-cover flex-shrink-0" width="88" height="88" loading="lazy" decoding="async">
+                            </picture>
                             <div>
                                 <p class="font-semibold text-brandText text-sm leading-tight">Rodrigo Sales</p>
                                 <p class="text-xs text-gray-400 mt-0.5">há 2 meses</p>
@@ -882,7 +932,10 @@
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <img src="assets/img/sandra-marques.png" alt="Sandra Marques" class="w-11 h-11 rounded-full object-cover flex-shrink-0">
+                            <picture>
+                                <source srcset="assets/img/webp/sandra-marques.webp" type="image/webp">
+                                <img src="assets/img/sandra-marques.png" alt="Sandra Marques" class="w-11 h-11 rounded-full object-cover flex-shrink-0" width="88" height="88" loading="lazy" decoding="async">
+                            </picture>
                             <div>
                                 <p class="font-semibold text-brandText text-sm leading-tight">Sandra Marques</p>
                                 <p class="text-xs text-gray-400 mt-0.5">há 3 meses</p>
@@ -1135,11 +1188,17 @@
                     <div class="flex flex-wrap items-center gap-3 mb-6">
                         <!-- Badge Dudalu -->
                         <a href="#dudalu" class="bg-white px-4 py-3 rounded-xl shadow-[0_4px_15px_rgba(230,57,70,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(230,57,70,0.3)] group border border-white/10">
-                            <img src="assets/img/logo-sf-1.png" alt="Dudalu Uniformes" class="h-8 md:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+                            <picture>
+                                <source srcset="assets/img/webp/logo-sf-1.webp" type="image/webp">
+                                <img src="assets/img/logo-sf-1.png" alt="Dudalu Uniformes" class="h-8 md:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="200" height="200" loading="lazy" decoding="async">
+                            </picture>
                         </a>
                         <!-- Badge VIP Line -->
                         <a href="#vipline" class="bg-white px-4 py-3 rounded-xl shadow-[0_4px_15px_rgba(107,44,126,0.2)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(107,44,126,0.3)] group border border-white/10">
-                            <img src="assets/img/logo-sf-2.png" alt="VIP Line" class="h-8 md:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+                            <picture>
+                                <source srcset="assets/img/webp/logo-sf-2.webp" type="image/webp">
+                                <img src="assets/img/logo-sf-2.png" alt="VIP Line" class="h-8 md:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300" width="200" height="200" loading="lazy" decoding="async">
+                            </picture>
                         </a>
                     </div>
                     <p class="text-sm text-gray-400 leading-relaxed mb-4">VIP Line Camisetas e Dudalu Uniformes — Confecção e personalização de uniformes profissionais e escolares em Criciúma/SC.</p>
