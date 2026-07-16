@@ -428,7 +428,8 @@
     }
 
     .checking,
-    .success {
+    .success,
+    .wrong {
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -453,6 +454,20 @@
     }
 
     .success.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .wrong {
+      border: 1px solid rgba(230, 57, 70, 0.24);
+      background: rgba(230, 57, 70, 0.08);
+      color: var(--brand-red-dark);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: var(--transition);
+    }
+
+    .wrong.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -887,6 +902,10 @@
                   <span aria-hidden="true">✓</span>
                   <span>Você acertou! 🎉</span>
                 </div>
+                <div id="wrongState" class="wrong" hidden>
+                  <span aria-hidden="true">×</span>
+                  <span>tente de novo</span>
+                </div>
               </div>
             </div>
           </div>
@@ -984,6 +1003,7 @@
 
       const els = {};
       let checkingAnswer = false;
+      let hasSolved = false;
       let countdownTimer = null;
 
       document.addEventListener("DOMContentLoaded", init);
@@ -1008,6 +1028,7 @@
         els.gameArea = document.getElementById("gameArea");
         els.checkingState = document.getElementById("checkingState");
         els.successState = document.getElementById("successState");
+        els.wrongState = document.getElementById("wrongState");
         els.formSection = document.getElementById("formSection");
         els.leadForm = document.getElementById("leadForm");
         els.couponSection = document.getElementById("couponSection");
@@ -1085,13 +1106,15 @@
       }
 
       function revelarAcerto(opcaoSelecionada) {
-        if (checkingAnswer) return;
+        if (checkingAnswer || hasSolved) return;
         checkingAnswer = true;
 
         els.gameArea.classList.add("is-checking");
         els.checkingState.hidden = false;
         els.successState.hidden = true;
+        els.wrongState.hidden = true;
         els.successState.classList.remove("is-visible");
+        els.wrongState.classList.remove("is-visible");
         toggleOptions(true);
 
         window.setTimeout(() => {
@@ -1100,18 +1123,22 @@
           els.checkingState.hidden = true;
 
           if (acertou) {
+            hasSolved = true;
             els.successState.hidden = false;
             window.requestAnimationFrame(() => els.successState.classList.add("is-visible"));
             revealForm();
+          } else {
+            els.wrongState.hidden = false;
+            window.requestAnimationFrame(() => els.wrongState.classList.add("is-visible"));
           }
 
           checkingAnswer = false;
-          toggleOptions(false);
+          toggleOptions(hasSolved);
         }, 1250);
       }
 
-      function validarPalpite() {
-        return true;
+      function validarPalpite(opcaoSelecionada) {
+        return opcaoSelecionada.id === "opcao-c";
       }
 
       function toggleOptions(disabled) {
