@@ -43,7 +43,7 @@ pasta local dist/  ──(manual)──>  Hostinger public_html  ──>  Hostin
 
 - **Sem GitHub Actions** (não há `.github/workflows` no repositório).
 - **Script local** `npm run deploy` (`scripts/hostinger-deploy.mjs`): faz build, zipa `dist/` e envia pela API da Hostinger. Precisa de `HOSTINGER_API_TOKEN` em `.env.local`, que **não existe** nesta máquina. Por isso não há publicação automática por esse caminho.
-- **Hostinger Git Deployment (GitHub → Hostinger):** **não verificável localmente** (não há `gh` CLI nem token). Precisa ser conferido no hPanel (ver passo 2 abaixo). Se existir com "Auto Deployment", um push em `main` sobrescreveria `public_html`, **incluindo o `.htaccess`**, e desfaria a suspensão.
+- **Hostinger Git Deployment (GitHub → Hostinger): EXISTE** (confirmado no hPanel em 2026-10-27). Repositório `https://github.com/pauloblum1-boop/site-dudalu-vipiline.git`, ramo `main`, caminho `/` (= `public_html`). Ou seja, `public_html` é um clone do repositório. O "Implantar" manual, ou um push em `main` com a implantação automática ligada (webhook no GitHub), sobrescreve `public_html`, **incluindo o `.htaccess`**, e desfaz a suspensão.
 - As imagens no servidor **não são byte-idênticas** às do Git: o servidor tem versões redimensionadas (ex.: `escolas/sb1.jpg` com 1600×2133 no servidor e 3024×4032 no Git). O Git guarda os originais em resolução maior. A cópia exata do servidor foi baixada (ver Backup).
 
 ### Banco de dados, CMS, variáveis de ambiente
@@ -90,7 +90,7 @@ Arquivos prontos em `.offline-backup-2026-10-27/offline-layer/`:
 `site-offline.html` e `htaccess-offline-block.txt`.
 
 1. Acesse `https://hpanel.hostinger.com` → **Sites** → `dudaline.com` → **Gerenciar** (Manage).
-2. **Antes de tudo, desligue republicação automática:** menu **Avançado → GIT**. Se houver um repositório conectado, **desative "Implantação automática" (Auto Deployment)** ou remova apenas o webhook. **Não** clique em excluir repositório. Anote aqui o que existia: `______`. Se não houver nada, registre "sem Git Deployment".
+2. **Antes de tudo, desligue republicação automática:** menu **Avançado → GIT → Gerenciar repositórios** → `⋮` da linha `site-dudalu-vipiline` (`main`, `/`) → **Implantação automática**. Anote a URL de webhook exibida: `______`. Em seguida, no GitHub, abra **Settings → Webhooks** (`https://github.com/pauloblum1-boop/site-dudalu-vipiline/settings/hooks`). Se houver webhook com essa URL, **desmarque "Active"** e salve. **Não** exclua o webhook. Nesse menu `⋮`, **não clique em "Remover"** (desconecta o repositório) **nem em "Implantar"** (republica `main` e desfaz a suspensão). Registre aqui: webhook existia? `___` Desativado em `____-__-__`.
 3. **Backup do servidor:** menu **Arquivos → Backups** → gere e baixe o backup dos arquivos (`public_html`). Guarde o arquivo junto com esta pasta.
 4. **Arquivos → Gerenciador de Arquivos** → `public_html`:
    1. Baixe uma cópia do `.htaccess` atual (clique direito → Download) e salve como `.htaccess.original-2026` no computador.
@@ -156,7 +156,7 @@ Código ✔ · Assets (Git + cópia do servidor) ✔ · GitHub e histórico ✔ 
 2. Edite `.htaccess` e apague tudo entre `# BEGIN SITE-OFFLINE-2026` e `# END SITE-OFFLINE-2026` (inclusive). Ou restaure o `.htaccess.original-2026` salvo.
 3. Apague `public_html/site-offline.html`.
 4. Desempenho → CDN → Limpar cache.
-5. Se o Git Deployment foi desativado no passo 2, reative-o (Avançado → GIT).
+5. Se o webhook foi desativado no passo 2, reative-o: GitHub → Settings → Webhooks → marcar "Active". Opcionalmente, hPanel → Avançado → GIT → `⋮` → **Implantar**, para sincronizar `public_html` com `main`.
 6. Rode os testes abaixo.
 
 ### Caso 2: hospedagem nova ou restaurada do zero
