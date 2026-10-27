@@ -11,9 +11,14 @@ Site retirado temporariamente de produção por decisão administrativa relacion
 ## Data da suspensão
 
 - Preparação, backup e ponto de preservação Git: **2026-10-27**.
-- Aplicação da camada 503 na Hostinger: **PENDENTE — ação manual** (ver "Como retirar do ar"). Registre aqui a data em que for aplicada: `____-__-__`.
+- Aplicação da camada 503 na Hostinger (manual, pelo hPanel): **2026-10-27**.
 
-> Status em 2026-10-27, no fim do trabalho automatizado: o site **continua ONLINE** (HTTP 200). A retirada exige acesso ao hPanel, que não estava disponível nesta sessão.
+> Verificado em 2026-10-27 19:10 UTC: o site está **OFFLINE**.
+> - `https://dudaline.com/` (e todas as páginas e assets): **503**, com `Retry-After: 86400`, `X-Robots-Tag: noindex` e a página "Site temporariamente indisponível".
+> - `http://` → 301 → `https://` → 503.
+> - `https://www.dudaline.com/`: **503**, mas com a página 503 padrão do servidor (neutra) em vez de `site-offline.html`.
+> - `/.well-known/` liberado (404), então a renovação do SSL não é bloqueada.
+> - MX, SPF, DKIM, DMARC e NS sem alteração.
 
 ---
 
@@ -90,7 +95,7 @@ Arquivos prontos em `.offline-backup-2026-10-27/offline-layer/`:
 `site-offline.html` e `htaccess-offline-block.txt`.
 
 1. Acesse `https://hpanel.hostinger.com` → **Sites** → `dudaline.com` → **Gerenciar** (Manage).
-2. **Antes de tudo, desligue republicação automática:** menu **Avançado → GIT → Gerenciar repositórios** → `⋮` da linha `site-dudalu-vipiline` (`main`, `/`) → **Implantação automática**. Anote a URL de webhook exibida: `______`. Em seguida, no GitHub, abra **Settings → Webhooks** (`https://github.com/pauloblum1-boop/site-dudalu-vipiline/settings/hooks`). Se houver webhook com essa URL, **desmarque "Active"** e salve. **Não** exclua o webhook. Nesse menu `⋮`, **não clique em "Remover"** (desconecta o repositório) **nem em "Implantar"** (republica `main` e desfaz a suspensão). Registre aqui: webhook existia? `___` Desativado em `____-__-__`.
+2. **Antes de tudo, desligue republicação automática:** menu **Avançado → GIT → Gerenciar repositórios** → `⋮` da linha `site-dudalu-vipiline` (`main`, `/`) → **Implantação automática**. Anote a URL de webhook exibida: `______`. Em seguida, no GitHub, abra **Settings → Webhooks** (`https://github.com/pauloblum1-boop/site-dudalu-vipiline/settings/hooks`). Se houver webhook com essa URL, **desmarque "Active"** e salve. **Não** exclua o webhook. Nesse menu `⋮`, **não clique em "Remover"** (desconecta o repositório) **nem em "Implantar"** (republica `main` e desfaz a suspensão). **Feito em 2026-10-27:** o webhook `https://webhooks.hostinger.com/deploy/…` (evento push) existia e foi **desativado** (Active desmarcado, não excluído).
 3. **Backup do servidor:** menu **Arquivos → Backups** → gere e baixe o backup dos arquivos (`public_html`). Guarde o arquivo junto com esta pasta.
 4. **Arquivos → Gerenciador de Arquivos** → `public_html`:
    1. Baixe uma cópia do `.htaccess` atual (clique direito → Download) e salve como `.htaccess.original-2026` no computador.
@@ -131,7 +136,8 @@ Criados (fora de `dist/`, não publicados):
 ## Infraestrutura alterada
 
 - **GitHub:** só adições. Tag `site-before-offline-2026` e branch `archive/site-before-offline-2026`. `main` não foi tocada.
-- **Hostinger:** nada alterado até 2026-10-27 (pendente, manual).
+- **Hostinger:** em `public_html`, foi adicionado o arquivo `site-offline.html` e o bloco `SITE-OFFLINE-2026` no topo do `.htaccess`. O cache do CDN foi limpo. Nada foi apagado. O Git Deployment continua configurado no hPanel.
+- **GitHub webhook** `webhooks.hostinger.com/deploy/…`: desativado (não excluído).
 - **GitHub Actions:** não existem.
 - **DNS:** nada alterado.
 
